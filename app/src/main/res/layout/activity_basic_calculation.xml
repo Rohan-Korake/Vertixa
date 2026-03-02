@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0F19"
+    android:orientation="vertical"
+    tools:context=".basicCalculation">
+
+    <!-- Output display -->
+    <TextView
+        android:id="@+id/OutputScreen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="bottom|end"
+        android:padding="24dp"
+        android:textColor="#FFFFFF"
+        android:hint="0"
+        android:textColorHint="@color/white"
+        android:textSize="32sp" />
+
+    <!-- Buttons Grid -->
+    <GridLayout
+        android:id="@+id/gridKeys"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/rounded_bg"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:padding="12dp">
+
+        <!-- Row 1 -->
+        <Button android:id="@+id/ac" style="@style/CalcButtonGray" android:text="AC" />
+        <Button android:id="@+id/mod" style="@style/CalcButtonGray" android:text="%" android:onClick="handleInputOperator"/>
+        <Button android:id="@+id/clear" style="@style/CalcButtonGray" android:text="C" />
+        <Button android:id="@+id/divide" style="@style/CalcButtonOrange" android:text="/" android:onClick="handleInputOperator"/>
+
+        <!-- Row 2 -->
+        <Button android:id="@+id/seven" style="@style/CalcButtonDark" android:text="7" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/eight" style="@style/CalcButtonDark" android:text="8" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/nine" style="@style/CalcButtonDark" android:text="9" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/multiply" style="@style/CalcButtonOrange" android:text="*" android:onClick="handleInputOperator"/>
+
+        <!-- Row 3 -->
+        <Button android:id="@+id/four" style="@style/CalcButtonDark" android:text="4" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/five" style="@style/CalcButtonDark" android:text="5" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/six" style="@style/CalcButtonDark" android:text="6" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/subtract" style="@style/CalcButtonOrange" android:text="-" android:onClick="handleInputOperator"/>
+
+        <!-- Row 4 -->
+        <Button android:id="@+id/one" style="@style/CalcButtonDark" android:text="1" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/two" style="@style/CalcButtonDark" android:text="2" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/three" style="@style/CalcButtonDark" android:text="3" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/add" style="@style/CalcButtonOrange" android:text="+" android:onClick="handleInputOperator"/>
+
+        <!-- Row 5 -->
+        <Button android:id="@+id/doubleZero" style="@style/CalcButtonDark" android:text="00" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/zero" style="@style/CalcButtonDark" android:text="0" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/dot" style="@style/CalcButtonDark" android:text="." android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/equal" style="@style/CalcButtonGreen" android:text="="/>
+
+    </GridLayout>
+
+</LinearLayout>
