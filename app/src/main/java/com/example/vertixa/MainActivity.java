@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bmiCal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "BMI Calculation", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MainActivity.this,bmiCalculator.class);
+                startActivity(intent);
             }
         });
 

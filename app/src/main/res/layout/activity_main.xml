@@ -34,7 +34,7 @@
                 android:textSize="28sp"
                 android:textColor="#7B61FF"
                 android:letterSpacing="0.05"
-                android:fontFamily="cursive"
+                android:fontFamily="sans-serif-medium"
                 android:textStyle="bold"
                 android:text="Vertixa" />
         </LinearLayout>
