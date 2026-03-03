@@ -16,7 +16,7 @@ public class basicCalculation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_calculation);
-
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         OutputScreen = findViewById(R.id.OutputScreen);
 
         // AC Button

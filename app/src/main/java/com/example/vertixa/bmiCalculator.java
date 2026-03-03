@@ -21,7 +21,7 @@ public class bmiCalculator extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         setContentView(R.layout.activity_bmi_calculator);
         weight = findViewById(R.id.weight);
         height = findViewById(R.id.height);

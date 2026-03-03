@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vertixa">
         <activity
+            android:name=".ageCalculator"
+            android:exported="false" />
+        <activity
             android:name=".bmiCalculator"
             android:exported="false" />
         <activity

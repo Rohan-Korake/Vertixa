@@ -1,6 +1,8 @@
 package com.example.vertixa;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -21,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(Color.parseColor("#0B0F19")); // your dark color
+        }
 
         findViewById(R.id.basicCal).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.ageCal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Age Calculation", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MainActivity.this,ageCalculator.class);
+                startActivity(intent);
             }
         });
 

@@ -8,9 +8,10 @@
     android:layout_height="match_parent"
     android:background="#0B0F19"
     android:orientation="vertical"
-    tools:context=".bmiCalculator">
+    android:fitsSystemWindows="true"
+    tools:context=".ageCalculator">
 
-    <!-- Header Section -->
+    <!-- Header Section  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +22,8 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            android:contentDescription="Logo"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,16 +34,17 @@
             android:letterSpacing="0.05"
             android:fontFamily="sans-serif-light"
             android:textStyle="bold"
-            android:text="Vertixa" />
+            android:text="Vertixa"/>
     </LinearLayout>
 
-    <!--    body-->
+    <!-- Body Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="vertical"
         android:gravity="center"
-        android:orientation="vertical">
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -55,74 +58,80 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="30sp"
-                android:textColor="@color/white"
+                android:textColor="#E0E0E0"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="BMI Calculator"/>
+                android:layout_marginBottom="20dp"
+                android:text="Age Calculator"/>
 
+            <!-- Input Date of Birth -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:weightSum="2">
+                android:layout_marginBottom="10dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Date of Birth : "
+                    android:textColor="#E0E0E0"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/birthDate"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:textSize="20sp"
+                    android:textColor="#E0E0E0"
+                    android:hint="Select Date"
+                    android:textColorHint="#AFFFFFFF"/>
+            </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/weight"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content"
-                        android:hint="Weight (kg)"
-                        android:inputType="numberDecimal"
-                        android:background="@drawable/rounded_bg"
-                        android:padding="22dp"
-                        android:gravity="center"
-                        android:textSize="16sp"
-                        android:textColorHint="#AFFFFFFF"
-                        android:textColor="@color/white"
-                        android:layout_margin="8dp" />
+            <!-- Input Age At Date -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
 
-                    <EditText
-                        android:id="@+id/height"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content"
-                        android:hint="Height (cm)"
-                        android:background="@drawable/rounded_bg"
-                        android:inputType="numberDecimal"
-                        android:padding="22dp"
-                        android:gravity="center"
-                        android:textSize="16sp"
-                        android:textColorHint="#AFFFFFFF"
-                        android:textColor="@color/white"
-                        android:layout_margin="8dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age at Date  : "
+                    android:textColor="#E0E0E0"
+                    android:textSize="20sp"/>
 
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/ageAtDate"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#E0E0E0"
+                    android:hint="Select Date"
+                    android:textColorHint="#AFFFFFFF"/>
             </LinearLayout>
 
             <Button
-                android:id="@+id/calculate"
+                android:id="@+id/calculateAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_margin="8dp"
                 android:background="@drawable/btn_rounded"
-                android:text="Calculate BMI"/>
+                android:text="Calculate Age"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"/>
 
             <TextView
-                android:id="@+id/bmiResult"
+                android:id="@+id/totalAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
                 android:gravity="center"
-                android:text="Your BMI will appear here"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:text="Select Dates"
+                android:textColor="#E0E0E0"
+                android:textSize="16sp"/>
         </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>
