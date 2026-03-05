@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setNavigationBarColor(Color.parseColor("#0B0F19")); // your dark color
         }
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
 
         findViewById(R.id.basicCal).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +55,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.countDown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "CountDown Timer", Toast.LENGTH_SHORT).show();
-            }
+                Intent intent=new Intent(MainActivity.this,countDownTimer.class);
+                startActivity(intent);
+                 }
         });
 
         findViewById(R.id.randomNum).setOnClickListener(new View.OnClickListener() {
