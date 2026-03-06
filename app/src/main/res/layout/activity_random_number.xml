@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0F19"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".randomNumber">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D1B2A"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Vertixa"
+            android:textSize="28sp"
+            android:textColor="#7B61FF"
+            android:letterSpacing="0.05"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="@drawable/rounded_bg">
+
+            <TextView
+                android:id="@+id/output"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:textSize="60dp"
+                android:text="00"
+                android:textColor="#E0E0E0"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/start"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:hint="Min"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/rounded_bg"
+                    android:textColor="#E0E0E0"
+                    android:textColorHint="#E0E0E0"
+                    android:gravity="center"/>
+
+                <EditText
+                    android:id="@+id/end"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:hint="Max"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/rounded_bg"
+                    android:textColor="#E0E0E0"
+                    android:textColorHint="#E0E0E0"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/generate"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Generate Number"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_rounded"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Reset Range"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_rounded"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
