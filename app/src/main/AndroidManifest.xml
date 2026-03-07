@@ -14,18 +14,23 @@
         <activity
             android:name=".unitConvertor"
             android:exported="false" />
+
         <activity
             android:name=".randomNumber"
             android:exported="false" />
+
         <activity
             android:name=".countDownTimer"
             android:exported="false" />
+
         <activity
             android:name=".ageCalculator"
             android:exported="false" />
+
         <activity
             android:name=".bmiCalculator"
             android:exported="false" />
+
         <activity
             android:name=".splash"
             android:exported="true">
@@ -35,9 +40,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".basicCalculation"
             android:exported="false" />
