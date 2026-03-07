@@ -12,33 +12,13 @@
     android:fitsSystemWindows="true"
     tools:context=".randomNumber">
 
-    <!-- Header Section -->
-    <LinearLayout
+    <!-- Header -->
+    <include
+        layout="@layout/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#0D1B2A"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/logo"
-            android:contentDescription="Logo" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Vertixa"
-            android:textSize="28sp"
-            android:textColor="#7B61FF"
-            android:letterSpacing="0.05"
-            android:fontFamily="sans-serif-light"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
+<!--    body-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

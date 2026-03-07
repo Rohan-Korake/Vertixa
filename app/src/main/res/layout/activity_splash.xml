@@ -5,30 +5,32 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
+    android:gravity="center"
     android:background="@color/black"
     tools:context=".splash">
 
+    <ImageView
+        android:layout_width="82dp"
+        android:layout_height="65dp"
+        android:src="@drawable/logo"
+        android:contentDescription="App Logo" />
 
-
-        <ImageView
-            android:layout_width="82dp"
-            android:layout_height="65dp"
-            android:src="@drawable/logo"/>
     <ImageView
         android:layout_width="81dp"
         android:layout_height="32dp"
-        android:src="@drawable/name" />
+        android:layout_marginTop="8dp"
+        android:src="@drawable/name"
+        android:contentDescription="App Name" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="200dp"
         android:layout_height="12dp"
+        android:layout_marginTop="20dp"
         style="?android:attr/progressBarStyleHorizontal"
         android:indeterminate="true"
         android:progressTint="#00E5FF"
-        android:backgroundTint="#1E2A47"/>
-
+        android:backgroundTint="#1E2A47" />
 
 </LinearLayout>

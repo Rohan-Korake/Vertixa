@@ -14,30 +14,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header Section -->
-        <LinearLayout
+        <!-- Header -->
+        <include
+            layout="@layout/header"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#040404"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/logo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="28sp"
-                android:textColor="#7B61FF"
-                android:letterSpacing="0.05"
-                android:fontFamily="sans-serif-medium"
-                android:textStyle="bold"
-                android:text="Vertixa" />
-        </LinearLayout>
+            android:layout_height="wrap_content"/>
 
         <!-- Separator -->
         <View

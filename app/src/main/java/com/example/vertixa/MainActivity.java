@@ -18,10 +18,11 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setNavigationBarColor(Color.parseColor("#0B0F19")); // your dark color
+            getWindow().setNavigationBarColor(Color.parseColor("#0B0F19"));
         }
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
 
+//        basic calculator page
         findViewById(R.id.basicCal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        BMI calculator page
         findViewById(R.id.bmiCal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        Age calculator page
         findViewById(R.id.ageCal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        CountDown Timer page
         findViewById(R.id.countDown).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        Random Number page
         findViewById(R.id.randomNum).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        UnitConvertor page
         findViewById(R.id.unitCon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
