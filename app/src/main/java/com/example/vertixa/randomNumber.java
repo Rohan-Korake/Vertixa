@@ -18,6 +18,7 @@ public class randomNumber extends AppCompatActivity {
 
     EditText start, end;
     TextView output;
+    int min,max;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +62,8 @@ public class randomNumber extends AppCompatActivity {
                     return;
                 }
 
-                int min = Integer.parseInt(minStr);
-                int max = Integer.parseInt(maxStr);
+                min = Integer.parseInt(minStr);
+                max = Integer.parseInt(maxStr);
 
                 // Check equal numbers
                 if (min == max) {
@@ -89,8 +90,10 @@ public class randomNumber extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 output.setText("00");
-                start.setText("Min");
-                end.setText("Max");
+                start.setText("");
+                end.setText("");
+                min=0;
+                max=0;
             }
         });
     }

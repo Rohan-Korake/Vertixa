@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.unitCon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Unit Convertor", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MainActivity.this, unitConvertor.class);
+                startActivity(intent);
             }
         });
     }

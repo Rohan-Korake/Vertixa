@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B0F19"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".randomNumber">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D1B2A"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vertixa"
+            android:textSize="26sp"
+            android:textColor="#7B61FF"
+            android:layout_marginStart="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Center Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_bg"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="#E0E0E0"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:text="Unit Calculator"/>
+
+            <!-- Unit Selection -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"
+
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/fromUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_bg"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TO"
+                    android:textSize="18sp"
+                    android:textColor="#E0E0E0"
+                    android:layout_margin="8dp"/>
+
+                <Spinner
+                    android:id="@+id/toUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_bg"/>
+            </LinearLayout>
+
+            <!-- Number Inputs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/inputNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="Value"
+                    android:background="@drawable/rounded_bg"
+                    android:textSize="20dp"
+                    android:textColor="#E0E0E0"
+                    android:textColorHint="#E0E0E0"
+                    android:gravity="center"
+                    android:layout_marginEnd="4dp"
+                    android:inputType="numberDecimal"/>
+
+                <TextView
+                    android:id="@+id/resultNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="Result"
+                    android:background="@drawable/rounded_bg"
+                    android:textSize="20dp"
+                    android:textColor="#E0E0E0"
+                    android:textColorHint="#E0E0E0"
+                    android:gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:focusable="false"/>
+            </LinearLayout>
+
+            <!-- Convert Button -->
+            <Button
+                android:id="@+id/convert"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Convert"
+                android:textSize="20sp"
+                android:background="@drawable/btn_rounded"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Reset"
+                android:textSize="20sp"
+                android:background="@drawable/btn_rounded"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

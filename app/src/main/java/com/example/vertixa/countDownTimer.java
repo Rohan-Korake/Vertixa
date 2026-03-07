@@ -42,9 +42,9 @@ public class countDownTimer extends AppCompatActivity {
                 int mm = getSafeValue(minutes);
                 int ss = getSafeValue(seconds);
 
-                // ✅ Validate at least one field
+
                 if (hh == 0 && mm == 0 && ss == 0) {
-                    return; // do nothing if all empty
+                    return;
                 }
 
                 totalMillis = (hh * 3600 + mm * 60 + ss) * 1000;

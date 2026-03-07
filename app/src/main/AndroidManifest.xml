@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vertixa">
         <activity
+            android:name=".unitConvertor"
+            android:exported="false" />
+        <activity
             android:name=".randomNumber"
             android:exported="false" />
         <activity
