@@ -19,12 +19,24 @@ public class basicCalculation extends AppCompatActivity {
         setContentView(R.layout.activity_basic_calculation);
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         OutputScreen = findViewById(R.id.OutputScreen);
+
+
 //        handle home page button
         findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(basicCalculation.this,MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.clear).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!screenvalues.isEmpty()) {
+                    screenvalues = screenvalues.substring(0, screenvalues.length() - 1);
+                    OutputScreen.setText(screenvalues);
+                }
             }
         });
 

@@ -3,11 +3,9 @@ package com.example.vertixa;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class countDownTimer extends AppCompatActivity {
@@ -26,19 +24,15 @@ public class countDownTimer extends AppCompatActivity {
         setContentView(R.layout.activity_count_down_timer);
 
         progressBar = findViewById(R.id.progressBar);
-        progressBar.setMax(100);
 
         seconds = findViewById(R.id.seconds);
         minutes = findViewById(R.id.minutes);
         hours = findViewById(R.id.hours);
 
-        //        handle home page button
-        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(countDownTimer.this,MainActivity.class);
-                startActivity(intent);
-            }
+        // Home button
+        findViewById(R.id.homeButton).setOnClickListener(view -> {
+            Intent intent = new Intent(countDownTimer.this, MainActivity.class);
+            startActivity(intent);
         });
 
         // START BUTTON
@@ -46,13 +40,10 @@ public class countDownTimer extends AppCompatActivity {
 
             if (isRunning) return;
 
-            // If first time starting
             if (timeLeftMillis == 0) {
-
                 int hh = getSafeValue(hours);
                 int mm = getSafeValue(minutes);
                 int ss = getSafeValue(seconds);
-
 
                 if (hh == 0 && mm == 0 && ss == 0) {
                     return;
@@ -60,8 +51,10 @@ public class countDownTimer extends AppCompatActivity {
 
                 totalMillis = (hh * 3600 + mm * 60 + ss) * 1000;
                 timeLeftMillis = totalMillis;
-            }
 
+                // Set ProgressBar max to total time
+                progressBar.setMax((int) totalMillis);
+            }
             startTimer();
         });
 
@@ -82,18 +75,14 @@ public class countDownTimer extends AppCompatActivity {
             }
 
             isRunning = false;
-
             totalMillis = 0;
             timeLeftMillis = 0;
-
             progressBar.setProgress(0);
 
-            // Clear fields completely (important)
             hours.setText("");
             minutes.setText("");
             seconds.setText("");
 
-            // Enable editing again
             hours.setEnabled(true);
             minutes.setEnabled(true);
             seconds.setEnabled(true);
@@ -121,8 +110,8 @@ public class countDownTimer extends AppCompatActivity {
                 long m = (totalSeconds % 3600) / 60;
                 long s = totalSeconds % 60;
 
-                int progress = (int) ((totalMillis - timeLeftMillis) * 100 / totalMillis);
-                progressBar.setProgress(progress);
+                // Smooth progress update
+                progressBar.setProgress((int) (totalMillis - timeLeftMillis), true);
 
                 hours.setText(String.format("%02d", h));
                 minutes.setText(String.format("%02d", m));
@@ -134,15 +123,12 @@ public class countDownTimer extends AppCompatActivity {
 
                 isRunning = false;
                 timeLeftMillis = 0;
-
-                progressBar.setProgress(100);
-
+                progressBar.setProgress((int) totalMillis);
                 hours.setText("00");
                 minutes.setText("00");
                 seconds.setText("00");
             }
         };
-
         timer.start();
     }
 }
