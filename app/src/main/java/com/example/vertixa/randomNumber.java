@@ -23,7 +23,7 @@ public class randomNumber extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         setContentView(R.layout.activity_random_number);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

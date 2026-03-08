@@ -20,7 +20,7 @@ public class countDownTimer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+        getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         setContentView(R.layout.activity_count_down_timer);
 
         progressBar = findViewById(R.id.progressBar);
