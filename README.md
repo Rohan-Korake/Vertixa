@@ -30,22 +30,15 @@ git clone https://github.com/Rohan-Korake/Vertixa.git
 
 Here’s how Vertixa looks across its main features:
 
-<div align="center">
   <img src="assets/splashScreen.png" width="180" alt="Splash Screen"/>
   <img src="assets/home.png" width="180" alt="Home Screen"/>
   <img src="assets/basicCalculator.png" width="180" alt="Basic Calculator"/>
-</div>
-
-<div align="center" style="margin-top: 20px;">
   <img src="assets/bmiCalculator.png" width="180" alt="BMI Calculator"/>
   <img src="assets/ageCalculator.png" width="180" alt="Age Calculator"/>
   <img src="assets/countDownTimer.png" width="180" alt="Countdown Timer"/>
-</div>
-
-<div align="center" style="margin-top: 20px;">
   <img src="assets/randomNumber.png" width="180" alt="Random Number"/>
   <img src="assets/unitConvertor.png" width="180" alt="Unit Converter"/>
-</div>
+
 
 ## Technologies Used
 
