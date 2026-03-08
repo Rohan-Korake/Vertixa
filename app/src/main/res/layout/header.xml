@@ -8,27 +8,41 @@
     <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:background="#040404"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center_vertical">
+        android:padding="12dp">
 
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:src="@drawable/logo"
-            android:contentDescription="Logo"/>
+            android:contentDescription="Logo"
+            android:src="@drawable/logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vertixa"
-            android:textSize="26sp"
-            android:textColor="#7B61FF"
             android:layout_marginStart="10dp"
             android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"/>
+            android:text="Vertixa"
+            android:textColor="#7B61FF"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rounded"
+            android:text="HOME"
+            android:textSize="12sp" />
+
     </LinearLayout>
 
 </LinearLayout>

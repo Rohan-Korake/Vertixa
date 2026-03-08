@@ -1,5 +1,6 @@
 package com.example.vertixa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,6 +31,15 @@ public class randomNumber extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        //        handle home page button
+        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(randomNumber.this,MainActivity.class);
+                startActivity(intent);
+            }
         });
 
         start = findViewById(R.id.start);

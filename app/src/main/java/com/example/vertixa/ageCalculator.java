@@ -2,6 +2,7 @@ package com.example.vertixa;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,6 +37,15 @@ public class ageCalculator extends AppCompatActivity {
             Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars());
             view.setPadding(view.getPaddingLeft(), insets.top, view.getPaddingRight(), view.getPaddingBottom());
             return WindowInsetsCompat.CONSUMED;
+        });
+
+//        handle home page button
+        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(ageCalculator.this,MainActivity.class);
+                startActivity(intent);
+            }
         });
 
         birthDate = findViewById(R.id.birthDate);

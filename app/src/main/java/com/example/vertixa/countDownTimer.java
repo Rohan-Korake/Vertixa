@@ -1,7 +1,9 @@
 package com.example.vertixa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
@@ -29,6 +31,15 @@ public class countDownTimer extends AppCompatActivity {
         seconds = findViewById(R.id.seconds);
         minutes = findViewById(R.id.minutes);
         hours = findViewById(R.id.hours);
+
+        //        handle home page button
+        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(countDownTimer.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // START BUTTON
         findViewById(R.id.btnStart).setOnClickListener(view -> {

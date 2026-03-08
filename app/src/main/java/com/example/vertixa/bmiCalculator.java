@@ -1,5 +1,6 @@
 package com.example.vertixa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,14 @@ public class bmiCalculator extends AppCompatActivity {
         weight = findViewById(R.id.weight);
         height = findViewById(R.id.height);
         bmiResult = findViewById(R.id.bmiResult);
+//        handle home page button
+        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(bmiCalculator.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         findViewById(R.id.calculate).setOnClickListener(new View.OnClickListener() {
             @Override

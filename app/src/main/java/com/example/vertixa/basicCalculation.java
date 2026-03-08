@@ -1,5 +1,6 @@
 package com.example.vertixa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +19,14 @@ public class basicCalculation extends AppCompatActivity {
         setContentView(R.layout.activity_basic_calculation);
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         OutputScreen = findViewById(R.id.OutputScreen);
+//        handle home page button
+        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(basicCalculation.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // AC Button
         findViewById(R.id.ac).setOnClickListener(new View.OnClickListener() {
