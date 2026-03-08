@@ -30,14 +30,18 @@ git clone https://github.com/Rohan-Korake/Vertixa.git
 
 Here’s how Vertixa looks across its main features:
 
-  <img src="assets/splashScreen.png" width="180" alt="Splash Screen"/>
+<p align="left">
+  <img src="assets/splashScreen.png" width="187" alt="Splash Screen"/>
   <img src="assets/home.png" width="180" alt="Home Screen"/>
   <img src="assets/basicCalculator.png" width="180" alt="Basic Calculator"/>
   <img src="assets/bmiCalculator.png" width="180" alt="BMI Calculator"/>
+  </p>
+<p align="left">
   <img src="assets/ageCalculator.png" width="180" alt="Age Calculator"/>
   <img src="assets/countDownTimer.png" width="180" alt="Countdown Timer"/>
   <img src="assets/randomNumber.png" width="180" alt="Random Number"/>
   <img src="assets/unitConvertor.png" width="180" alt="Unit Converter"/>
+</p>
 
 
 ## Technologies Used
@@ -46,3 +50,10 @@ Here’s how Vertixa looks across its main features:
 - Platform: Android
 - IDE: Android Studio
 - XML for layouts and UI
+
+## 📞 Contact
+
+For suggestions or contributions, feel free to contact :
+
+- 📧 Email : rohannkorake@gmail.com
+- 🔗 Linkedin : https://www.linkedin.com/in/rohan-korake-720848342
