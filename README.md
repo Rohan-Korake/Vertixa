@@ -26,6 +26,9 @@ git clone https://github.com/Rohan-Korake/Vertixa.git
 
 ---
 
+## Install APK
+[Download APK from Google Drive](https://drive.google.com/file/d/1sj5x7UZ4u7dqWQ4auMRGLDP7bS94ItxO/view?usp=sharing)
+
 ## App Preview
 
 Here’s how Vertixa looks across its main features:
