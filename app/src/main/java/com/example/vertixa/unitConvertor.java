@@ -89,7 +89,8 @@ public class unitConvertor extends AppCompatActivity {
                 int fromIndex = fromUnit.getSelectedItemPosition();
                 int toIndex = toUnit.getSelectedItemPosition();
                 double result = inpValue * factor[fromIndex] / factor[toIndex];
-                resultNumber.setText(String.valueOf(result));
+                String formattedResult = String.format("%.2f", result);
+                resultNumber.setText(formattedResult);
             }
         });
 
