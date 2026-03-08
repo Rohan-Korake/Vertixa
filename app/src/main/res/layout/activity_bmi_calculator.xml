@@ -6,8 +6,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B0F19"
+    android:background="#040404"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".bmiCalculator">
 
     <!-- Header -->
@@ -85,12 +86,13 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/calculate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:layout_margin="8dp"
+                android:textColor="#E0E0E0"
                 android:background="@drawable/btn_rounded"
                 android:text="Calculate BMI"/>
 

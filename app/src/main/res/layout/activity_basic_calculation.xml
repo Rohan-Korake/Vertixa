@@ -6,8 +6,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B0F19"
+    android:background="#040404"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".basicCalculation">
 
     <!-- Header -->
@@ -38,10 +39,12 @@
         android:background="@drawable/rounded_bg"
         android:columnCount="4"
         android:rowCount="5"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
         android:padding="12dp">
 
         <!-- Row 1 -->
-        <Button android:id="@+id/ac" style="@style/CalcButtonGray" android:text="AC" />
+        <Button android:id="@+id/ac" style="@style/CalcButtonGray" android:text="AC" android:textSize="12sp"/>
         <Button android:id="@+id/mod" style="@style/CalcButtonGray" android:text="%" android:onClick="handleInputOperator"/>
         <Button android:id="@+id/clear" style="@style/CalcButtonGray" android:text="C" />
         <Button android:id="@+id/divide" style="@style/CalcButtonOrange" android:text="/" android:onClick="handleInputOperator"/>
@@ -65,7 +68,7 @@
         <Button android:id="@+id/add" style="@style/CalcButtonOrange" android:text="+" android:onClick="handleInputOperator"/>
 
         <!-- Row 5 -->
-        <Button android:id="@+id/doubleZero" style="@style/CalcButtonDark" android:text="00" android:onClick="handleInputNumber"/>
+        <Button android:id="@+id/doubleZero" style="@style/CalcButtonDark" android:text="00"  android:textSize="12sp" android:onClick="handleInputNumber"/>
         <Button android:id="@+id/zero" style="@style/CalcButtonDark" android:text="0" android:onClick="handleInputNumber"/>
         <Button android:id="@+id/dot" style="@style/CalcButtonDark" android:text="." android:onClick="handleInputNumber"/>
         <Button android:id="@+id/equal" style="@style/CalcButtonGreen" android:text="="/>

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#040404"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
@@ -19,12 +20,6 @@
             layout="@layout/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-        <!-- Separator -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="#3B82F6" />
 
         <!-- Main Body -->
         <ScrollView

@@ -6,8 +6,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B0F19"
+    android:background="#040404"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".randomNumber">
 
     <!-- Header -->
@@ -16,13 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-<!--    body-->
+    <!-- Body Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,10 +35,20 @@
             android:background="@drawable/rounded_bg">
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="28sp"
+                android:textColor="#E0E0E0"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:text="Random Number Generator"/>
+
+            <TextView
                 android:id="@+id/output"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:textSize="60dp"
+                android:textSize="60sp"
                 android:text="00"
                 android:textColor="#E0E0E0"
                 android:gravity="center"/>
@@ -55,8 +67,9 @@
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_bg"
                     android:textColor="#E0E0E0"
-                    android:textColorHint="#E0E0E0"
-                    android:gravity="center"/>
+                    android:textColorHint="#AFFFFFFF"
+                    android:gravity="center"
+                    android:inputType="number"/>
 
                 <EditText
                     android:id="@+id/end"
@@ -66,28 +79,30 @@
                     android:layout_margin="8dp"
                     android:background="@drawable/rounded_bg"
                     android:textColor="#E0E0E0"
-                    android:textColorHint="#E0E0E0"
-                    android:gravity="center"/>
+                    android:textColorHint="#AFFFFFFF"
+                    android:gravity="center"
+                    android:inputType="number"/>
             </LinearLayout>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/generate"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:text="Generate Number"
                 android:layout_margin="8dp"
+                android:textColor="#E0E0E0"
                 android:background="@drawable/btn_rounded"
-                android:textSize="20sp"/>
+                android:textSize="16sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/reset"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:text="Reset Range"
                 android:layout_margin="8dp"
+                android:textColor="#E0E0E0"
                 android:background="@drawable/btn_rounded"
-                android:textSize="20sp"/>
+                android:textSize="16sp" />
         </LinearLayout>
-
     </LinearLayout>
 </LinearLayout>
