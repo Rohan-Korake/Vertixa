@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -18,34 +16,41 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class unitConvertor extends AppCompatActivity {
 
-    Spinner fromUnit,toUnit;
+    Spinner fromUnit, toUnit;
     EditText inputNumber;
-
     TextView resultNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setStatusBarColor(getResources().getColor(android.R.color.black));
         setContentView(R.layout.activity_unit_convertor);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        //        handle home page button
-        findViewById(R.id.homeButton).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(unitConvertor.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        View mainView = findViewById(R.id.main);
+        if (mainView != null) {
+            ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+        }
 
-        fromUnit=findViewById(R.id.fromUnit);
-        toUnit=findViewById(R.id.toUnit);
-        inputNumber=findViewById(R.id.inputNumber);
-        resultNumber=findViewById(R.id.resultNumber);
+        // Handle home page button
+        View homeButton = findViewById(R.id.homeButton);
+        if (homeButton != null) {
+            homeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(unitConvertor.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        fromUnit = findViewById(R.id.fromUnit);
+        toUnit = findViewById(R.id.toUnit);
+        inputNumber = findViewById(R.id.inputNumber);
+        resultNumber = findViewById(R.id.resultNumber);
 
         String[] units = {"SELECT", "MM", "CM", "M", "KM", "IN", "FT", "YD", "MI"};
 
@@ -68,13 +73,11 @@ public class unitConvertor extends AppCompatActivity {
         findViewById(R.id.convert).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String fromValueUnit = fromUnit.getSelectedItem().toString();
+                String toValueUnit = toUnit.getSelectedItem().toString();
+                String inputValue = inputNumber.getText().toString().trim();
 
-                String fromValueUnit=fromUnit.getSelectedItem().toString();
-                String toValueUnit=toUnit.getSelectedItem().toString();
-                String inputValue=inputNumber.getText().toString();
-
-                if (fromValueUnit.equals("SELECT") || toValueUnit.equals("SELECT"))
-                {
+                if (fromValueUnit.equals("SELECT") || toValueUnit.equals("SELECT")) {
                     Toast.makeText(unitConvertor.this, "Please select units", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (inputValue.isEmpty()) {
@@ -82,15 +85,30 @@ public class unitConvertor extends AppCompatActivity {
                     return;
                 }
 
-                long inpValue = Long.parseLong(inputValue);
+                try {
+                    double inpValue = Double.parseDouble(inputValue);
+                    // Factors relative to Meters (M)
+                    double[] factor = {0, 0.001, 0.01, 1.0, 1000.0, 0.0254, 0.3048, 0.9144, 1609.344};
+                    int fromIndex = fromUnit.getSelectedItemPosition();
+                    int toIndex = toUnit.getSelectedItemPosition();
 
-                double[] factor = {0, 0.001, 0.01, 1, 1000, 0.0254, 0.3048, 0.9144, 1609.34};
+                    if (factor[fromIndex] == 0 || factor[toIndex] == 0) {
+                        Toast.makeText(unitConvertor.this, "Invalid unit selection", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                int fromIndex = fromUnit.getSelectedItemPosition();
-                int toIndex = toUnit.getSelectedItemPosition();
-                double result = inpValue * factor[fromIndex] / factor[toIndex];
-                String formattedResult = String.format("%.2f", result);
-                resultNumber.setText(formattedResult);
+                    double result = (inpValue * factor[fromIndex]) / factor[toIndex];
+                    String formattedResult = String.format("%.4f", result);
+                    // Trim trailing zeros and decimal point if not needed
+                    if (formattedResult.contains(".")) {
+                        formattedResult = formattedResult.replaceAll("0*$", "").replaceAll("\\.$", "");
+                    }
+                    resultNumber.setText(formattedResult);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(unitConvertor.this, "Invalid number entered", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(unitConvertor.this, "An error occurred", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
